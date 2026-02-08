@@ -44,62 +44,7 @@
         </div>
     </div>
 
-    <script>
-        var currentInput = "";
-        var previousInput = "";
-        var operator = null;
-
-        // FUNCTION 1: Add number to screen
-        function appendNumber(number) {
-            // Add the clicked number to the string
-            currentInput = currentInput + number;
-            // Update the UI
-            document.getElementById('display').value = currentInput;
-        }
-
-        // FUNCTION 2: Store the operator and prepare for next number
-        function setOperator(op) {
-            if (currentInput === "") return; // Do nothing if screen is empty
-            
-            operator = op;            // Remember the math symbol
-            previousInput = currentInput; // Move current number to storage
-            currentInput = "";        // Clear the variable for the next number
-            
-            document.getElementById('display').value = ""; 
-        }
-
-        // FUNCTION 3: Equals
-        function calculate() {
-            var result;
-            var prev = parseFloat(previousInput);
-            var current = parseFloat(currentInput);
-
-            if (operator === '+') {
-                result = prev + current;
-            } else if (operator === '-') {
-                result = prev - current;
-            } else if (operator === '*') {
-                result = prev * current;
-            } else if (operator === '/') {
-                result = prev / current;
-            }
-
-            // Update UI
-            document.getElementById('display').value = result;
-            
-            // Reset state
-            currentInput = result; 
-            operator = null;
-            previousInput = "";
-        }
-
-        // FUNCTION 4: Clear
-        function clearDisplay() {
-            currentInput = "";
-            previousInput = "";
-            operator = null;
-            document.getElementById('display').value = "";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
